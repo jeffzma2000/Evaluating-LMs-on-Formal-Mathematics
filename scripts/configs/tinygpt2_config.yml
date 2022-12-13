@@ -1,0 +1,14 @@
+---
+train:
+        model: "sshleifer/tiny-gpt2"
+        tokenizer: "sshleifer/tiny-gpt2"
+        data_path: "/data/corpora/SmartIsar/IsarStep/"
+        batch_size: 8
+val:
+        model: "/data/projects/isarstep/trained_model"
+        tokenizer: "sshleifer/tiny-gpt2"
+        n: 1 
+        output: "/data/projects/isarstep/results/model_output.txt"
+        prompts: "/data/corpora/SmartIsar/IsarStep/valid.src"
+        ref: "/data/corpora/SmartIsar/IsarStep/valid.tgt"
+        batch_size: 32 

@@ -1,0 +1,23 @@
+---
+train:
+        devices: "0,6,7"
+        model: "EleutherAI/pythia-125m-deduped"
+        tokenizer: "EleutherAI/pythia-125m-deduped"
+        data_path: "/data/corpora/new_isarstep/extracted_isar_dataset/CausalSteps/"
+        batch_size: 8 
+        model_output_path: "/data/projects/isarstep/trained_gpt_pythia_125m"
+        epochs: 1
+        lr: 1.e-4
+        grad_accum: 1
+        weight_decay: 0.01 
+        max_length: 1024 
+val:
+        model: "/data/projects/isarstep/trained_model"
+        tokenizer: "sshleifer/tiny-gpt2"
+        n: 2 
+        output: "/data/projects/isarstep/results/model_output.txt"
+        prompts: "/data/corpora/SmartIsar/IsarStep/valid.src"
+        ref: "/data/corpora/SmartIsar/IsarStep/valid.tgt"
+        batch_size: 32 
+        max_length: 512
+        max_new_tokens: 512
